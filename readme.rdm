@@ -1,0 +1,19 @@
+Este codigo fue modificado a partir del codigo de COELLO COELLO Carlos (Ph.D.) por BARSEKH-ONJI Aboud
+Para recompilar: 
+primero: g++ -std=c++17 -Wall -Wextra -g main.cpp genetic_algorithm.cpp -o genetic_program
+luego: ./genetic_program
+========================
+El codigo generar un archivo de texto con el nombre 'GA_ReporteDetallado_fecha_hora.txt' que contiene información detallda 
+de cada corrida y un resumen final
+El codigo genera un archivo .csv (en este formato: GA_Convergencia_AAAAMMDD_HHMMSS.csv) que contiene los datos para una vigura de convergencia ( N de generación, Ap_max)
+Para dibujar: 
+Asegurate de tener Gnuplot instalado (sino usa: pip install gnuplot)
+en la consola: Gnuplot
+luego: (en comandos separados)
+gnuplot> set datafile separator ","
+gnuplot> set title "Convergencia del Algoritmo Genético"
+gnuplot> set xlabel "Generación"
+gnuplot> set ylabel "Aptitud Máxima"
+gnuplot> set grid
+gnuplot> plot "GA_Convergencia_AAAAMMDD_HHMMSS.csv" using 1:2 with linespoints title "Aptitud Máxima"
+Fecha: May 16th, 2025
