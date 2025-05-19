@@ -73,10 +73,10 @@ private:
     int generation_of_best_ever_;
     int current_generation_;
 
-    long long total_crossovers_;      // Acumulativo global
-    long long total_mutations_;       // Acumulativo global (bits invertidos)
-    long long crossovers_this_generation_; // <--- NUEVO: Por generación
-    long long mutations_this_generation_;  // <--- NUEVO: Por generación (bits invertidos)
+    long long total_crossovers_;      
+    long long total_mutations_;       
+    long long crossovers_this_generation_; 
+    long long mutations_this_generation_;  
 
     double min_fitness_current_gen_; 
     double max_fitness_current_gen_; 

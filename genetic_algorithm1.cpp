@@ -145,7 +145,7 @@ void GeneticAlgorithm::logGenerationDataToTxt(int generation_num, const std::vec
 
     results_txt_file_stream_ << std::left << std::setw(W_ID) << "ID";
     if (chromosome_size_ > 0) {
-        // Para ACTIVAR cromosoma individual en TXT: Descomenta la siguiente línea y comenta la de abajo
+        // Para ACTIVAR cromosoma individual en TXT: Descomenta la siguiente línea y comenta la de abajo (la que genera espacio en su lugar)
         // results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << "Cromosoma"; 
         results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << " "; // DESACTIVADO por defecto
     }
@@ -275,8 +275,6 @@ void GeneticAlgorithm::run() {
     evaluatePopulation(current_population_);
     calculateStatistics(current_population_);
     
-    // generation_of_best_ever_ se inicializa a -1, y se actualiza en calculateStatistics
-    // por lo que la primera llamada a calculateStatistics establecerá el mejor inicial.
 
     reportCurrentGenerationToConsole();      
     logGenerationDataToTxt(0, current_population_); 

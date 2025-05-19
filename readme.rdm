@@ -6,7 +6,7 @@ Desarollo: BARSEKH-ONJI Aboud (M EEng), aboud.barsekh@anahuac.mx
 =============================================================================================================
 Caracerísticas:
 - cruza en un solo punto.
-- mutación uniforme.
+- mutación uniforme (por bit)
 - selección por ruleta.
 
 Para recompilar: 
@@ -25,16 +25,16 @@ gnuplot> set title "Convergencia del Algoritmo Genético"
 gnuplot> set xlabel "Generación"
 gnuplot> set ylabel "Aptitud Máxima"
 gnuplot> set grid
-gnuplot> plot "GA_Convergencia_AAAAMMDD_HHMMSS.csv" using 1:2 with linespoints title "Aptitud Máxima"
+gnuplot> plot "GA_Convergencia_AAAAMMDD_HHMMSS.csv" using 1:2 with linespoints title "Aptitud Máxima" 
 
 
 Nota importante:
 /////////////////
 Para imprimir el cromosoma de cada individuo desactivar las siguientes lineas:
-(147)    // results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << "Cromosoma"; // <--- Desactivar si se requiere mostrar cromosoma
-(163)    // results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << getChromosomeString(ind.chrom); // <--- Desactivar si se requiere mostrar cromosoma
-(541)    // std::cout << std::setw(W_CHROM_CON_PLACEHOLDER) << "Cromosoma"; // <--- LÍNEA DE ENCABEZADO DEL CROMOSOMA DESACTIVADA
-(551)    // std::cout << std::setw(W_CHROM_CON_PLACEHOLDER) << getChromosomeString(ind.chrom); // <--- LÍNEA DE DATOS DEL CROMOSOMA DESACTIVADA
+(149)    // results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << "Cromosoma"; // <--- Desactivar si se requiere mostrar cromosoma
+(172)    // results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << getChromosomeString(ind.chrom); // <--- Desactivar si se requiere mostrar cromosoma
+(620)    // std::cout << std::setw(W_CHROM_CON_PLACEHOLDER) << "Cromosoma"; // <--- LÍNEA DE ENCABEZADO DEL CROMOSOMA DESACTIVADA
+(637)    // std::cout << std::setw(W_CHROM_CON_PLACEHOLDER) << getChromosomeString(ind.chrom); // <--- LÍNEA DE DATOS DEL CROMOSOMA DESACTIVADA
 
 
 

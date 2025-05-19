@@ -1,5 +1,5 @@
 // main1.cpp MODIFICADO
-#include "genetic_algorithm1.h" // Asegúrate que el nombre del include coincida
+#include "genetic_algorithm1.h"
 #include <iostream>
 #include <string>
 #include <limits>
@@ -8,7 +8,7 @@
 
 template<typename T>
 T getInput(const std::string& prompt, T min_val, T max_val) {
-    // ... (tu función getInput robusta se mantiene igual)
+  
     T value;
     std::string line;
     while (true) {
@@ -30,7 +30,7 @@ T getInput(const std::string& prompt, T min_val, T max_val) {
 
 int main() {
     double pc, pm;
-    int gmax, pop_s, bits_por_variable, elitism_c; // Cambiado code_s a bits_por_variable
+    int gmax, pop_s, bits_por_variable, elitism_c; 
     unsigned int seed_val;
 
     GeneticAlgorithm::clearScreen();
@@ -39,10 +39,10 @@ int main() {
     std::cout << "========================================================" << std::endl;
 
     try {
-        pm = getInput<double>("Tasa de mutacion POR BIT (Pm) [ej. 0.001-0.05, max 1.0] -> ", 0.0, 1.0);
+        pm = getInput<double>("Este algoritmo usa mutación unforme por bit. Considera una tasa baja. Tasa de mutacion POR BIT (Pm) [ej. 0.001-0.05, max 1.0] -> ", 0.0, 1.0);
         pc = getInput<double>("Probabilidad de cruce (Pc) [0.0-1.0] ----------------> ", 0.0, 1.0);
         gmax = getInput<int>("Maximo numero de generaciones [1-10000] -----------> ", 1, 10000);
-        pop_s = getInput<int>("Tamano de la poblacion [50-500+] -------------------> ", 50, 2000); // Rango sugerido aumentado
+        pop_s = getInput<int>("Tamano de la poblacion [50-500+] -------------------> ", 50, 2000); 
         
         // --- CAMBIO IMPORTANTE AQUÍ ---
         // Pedir bits por variable en lugar de longitud total del cromosoma

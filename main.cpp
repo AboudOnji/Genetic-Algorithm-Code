@@ -4,7 +4,6 @@
 #include <limits>   // Para std::numeric_limits
 #include <stdexcept> // Para std::exception
 
-// Función auxiliar para leer entrada con validación básica
 template<typename T>
 T getInput(const std::string& prompt, T min_val, T max_val) {
     T value;
