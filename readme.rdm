@@ -1,8 +1,55 @@
-Este codigo fue modificado a partir del codigo de COELLO COELLO Carlos (Ph.D.) por BARSEKH-ONJI Aboud
+Esta carpeta incluye dos códigos desarrolladas a partir del código compartido por COELLO COELLO Carlos (Ph.D)
+Update: May19, 2025
+Desarollo: BARSEKH-ONJI Aboud (M EEng), aboud.barsekh@anahuac.mx
+=============================================================================================================
+//Algoritmo: genetic_algorithm1.cpp//
+=============================================================================================================
+Caracerísticas:
+- cruza en un solo punto.
+- mutación uniforme.
+- selección por ruleta.
+
+Para recompilar: 
+primero: g++ -std=c++17 -Wall -Wextra -g main1.cpp genetic_algorithm1.cpp -o genetic_program1
+luego: ./genetic_program1
+
+El codigo generar un archivo de texto con el nombre 'GA_ReporteDetallado_AAAAMMDD_HHMMSS.txt' que contiene información detallda 
+de cada corrida y un resumen final
+El codigo genera un archivo .csv (en este formato: GA_Convergencia_AAAAMMDD_HHMMSS.csv) que contiene los datos para una vigura de convergencia ( N de generación, Ap_max)
+Para dibujar: 
+Asegurate de tener Gnuplot instalado (sino usa: pip install gnuplot)
+en la consola: Gnuplot
+luego: (en comandos separados)
+gnuplot> set datafile separator ","
+gnuplot> set title "Convergencia del Algoritmo Genético"
+gnuplot> set xlabel "Generación"
+gnuplot> set ylabel "Aptitud Máxima"
+gnuplot> set grid
+gnuplot> plot "GA_Convergencia_AAAAMMDD_HHMMSS.csv" using 1:2 with linespoints title "Aptitud Máxima"
+
+
+Nota importante:
+/////////////////
+Para imprimir el cromosoma de cada individuo desactivar las siguientes lineas:
+(147)    // results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << "Cromosoma"; // <--- Desactivar si se requiere mostrar cromosoma
+(163)    // results_txt_file_stream_ << std::setw(W_CHROM_PLACEHOLDER) << getChromosomeString(ind.chrom); // <--- Desactivar si se requiere mostrar cromosoma
+(541)    // std::cout << std::setw(W_CHROM_CON_PLACEHOLDER) << "Cromosoma"; // <--- LÍNEA DE ENCABEZADO DEL CROMOSOMA DESACTIVADA
+(551)    // std::cout << std::setw(W_CHROM_CON_PLACEHOLDER) << getChromosomeString(ind.chrom); // <--- LÍNEA DE DATOS DEL CROMOSOMA DESACTIVADA
+
+
+
+=============================================================================================================
+//Algoritmo: genetic_algorithm.cpp//
+=============================================================================================================
+Caracerísticas:
+- cruza en dos puntos cut1, cut2
+- mutación de tipo bit-flip en un único punto, donde el punto se elige uniformemente al azar.
+- selección por torneo.
+
 Para recompilar: 
 primero: g++ -std=c++17 -Wall -Wextra -g main.cpp genetic_algorithm.cpp -o genetic_program
 luego: ./genetic_program
-========================
+
 El codigo generar un archivo de texto con el nombre 'GA_ReporteDetallado_fecha_hora.txt' que contiene información detallda 
 de cada corrida y un resumen final
 El codigo genera un archivo .csv (en este formato: GA_Convergencia_AAAAMMDD_HHMMSS.csv) que contiene los datos para una vigura de convergencia ( N de generación, Ap_max)
@@ -16,4 +63,4 @@ gnuplot> set xlabel "Generación"
 gnuplot> set ylabel "Aptitud Máxima"
 gnuplot> set grid
 gnuplot> plot "GA_Convergencia_AAAAMMDD_HHMMSS.csv" using 1:2 with linespoints title "Aptitud Máxima"
-Fecha: May 16th, 2025
+=============================================================================================================
